@@ -22,6 +22,10 @@ document.getElementById("transaction-form").addEventListener("submit", function(
   const type = document.querySelector('input[name="type-input"]:checked').value;
 
   if(type === 2 && value > getTotal()) {
+    if(!confirm("Atenção! Seu saldo após cadastrar essa despesa será negativo, deseja continuar?")) {
+        return;
+
+    }
     
     
   }
