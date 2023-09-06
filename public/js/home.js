@@ -21,12 +21,17 @@ document.getElementById("transaction-form").addEventListener("submit", function(
   const date = document.getElementById("date-input").value;
   const type = document.querySelector('input[name="type-input"]:checked').value;
 
-
+  if(type === 2 && value > getTotal()) {
+    
+    
+  }
 
   data.transactions.unshift({
     value: value, type: type, description: description, date: date
   });
 
+  
+  
   
 
   saveData(data);
@@ -81,7 +86,7 @@ function getCashIn() {
         let cashInHtml = ``;
         let limit = 0;
 
-        if(cashIn,length > 5) {
+        if(cashIn.length > 5) {
             limit = 5;
         } else {
            limit = cashIn.length;
